@@ -1,0 +1,12 @@
+<div>
+    <ul ng-repeat="ride in rides track by $index">
+        <li>
+            <a href="" ng-click="showOptions = !    showOptions">{{ ride.rideType }}</a>
+            <ul ng-show="showOptions">
+                <li ng-repeat="option in rides[$index].options">
+                    <p>{{option.brand}} {{ option.name }} {{option.engine}} {{ option.boots }}</p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

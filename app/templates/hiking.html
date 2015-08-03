@@ -1,0 +1,20 @@
+<div ng-controller="hikingCtrl">
+    <h1>HIKING</h1>
+
+    <input type="text" ng-model="stateName" placeholder="State...">
+    <button type="button" ng-click="getHikeData()">FIND</button>
+
+    <h2>{{ stateName }}</h2>
+
+    <section>
+        <div class="" ng-repeat="hike in hikeData">
+            <h4>{{hike.name}}</h4>
+            <ul>
+                <li>{{ hike.city }}</li>
+                <li>{{hike.description}}</li>
+            </ul>
+        </div>
+
+    </section>
+
+</div>
