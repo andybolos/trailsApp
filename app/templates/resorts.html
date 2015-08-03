@@ -1,0 +1,22 @@
+<div ng-controller="resortsCtrl">
+    <header-dir></header-dir>
+
+    <h1>Ski Resorts</h1>
+
+    <input type="text" ng-model="stateName" placeholder="State...">
+    <button type="button" ng-click="getResortData()">FIND</button>
+
+    <h2>{{ stateName | uppercase }}</h2>
+
+    <section>
+        <div class="" ng-repeat="resort in resortsData track by $index">
+            <h4>Resort Name: {{resort.name}}</h4>
+            <ul ng-repeat="detail in resortsData[$index].activities">
+                <li>City: {{ resort.city }}</li>
+                <li>Description: {{detail.description}}</li>
+            </ul>
+        </div>
+
+    </section>
+
+</div>

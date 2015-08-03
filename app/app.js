@@ -12,6 +12,10 @@ app.config(function($routeProvider, $httpProvider) {
         controller: 'hikingCtrl',
         templateUrl: 'app/templates/hiking.html'
     })
+    .when('/resorts', {
+        controller: 'resortsCtrl',
+        templateUrl: 'app/templates/resorts.html'
+    })
     .otherwise({
         redirectTo: '/home'
     })
