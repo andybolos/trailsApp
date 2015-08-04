@@ -16,6 +16,10 @@ app.config(function($routeProvider, $httpProvider) {
         controller: 'resortsCtrl',
         templateUrl: 'app/templates/resorts.html'
     })
+    .when('/mtnbiketrails', {
+        controller: 'mtnBikeCtrl',
+        templateUrl: 'app/templates/mtnBikeTmpl.html'
+    })
     .otherwise({
         redirectTo: '/home'
     })

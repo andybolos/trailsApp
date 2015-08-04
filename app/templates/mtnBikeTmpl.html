@@ -1,0 +1,29 @@
+<header-dir></header-dir>
+<section id="wrapper">
+<div ng-controller="mtnBikeCtrl">
+
+    <h1>Mountain Biking Trails</h1>
+    <h4>Enter a State</h4>
+    <form ng-submit="getMtnBikeData()" >
+        <input type="text" ng-model="stateName" placeholder="State...">
+        <input type="submit" ng-click="getMtnBikeData()" value="Find">
+        <input type="text" ng-model="city" placeholder="Filter by City...">
+    </form>
+
+    <h2>{{ stateName | uppercase }}</h2>
+
+    <section>
+        <div class="" ng-repeat="trail in mountainBikeData | filter: city track by $index">
+            <h4 ng-click="showDetails = !showDetails"><a href="">{{trail.name}}</a></h4>
+            <ul ng-repeat="detail in mountainBikeData[$index].activities" ng-show="showDetails">
+                <li>City: {{ trail.city }}</li>
+                <li>Description: {{detail.description}}</li>
+                <li>Directions: {{ trail.directions }}</li>
+            </ul>
+        </div>
+
+    </section>
+
+</div>
+</section>
+<foot-dir></foot-dir>

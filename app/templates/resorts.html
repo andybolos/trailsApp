@@ -1,17 +1,22 @@
+<header-dir></header-dir>
+<section id="wrapper">
 <div ng-controller="resortsCtrl">
-    <header-dir></header-dir>
+
 
     <h1>Ski Resorts</h1>
-
-    <input type="text" ng-model="stateName" placeholder="State...">
-    <button type="button" ng-click="getResortData()">FIND</button>
+    <h4>Enter a State</h4>
+    <form ng-submit="getResortData()" >
+        <input type="text" ng-model="stateName" placeholder="State...">
+        <input type="submit" ng-click="getResortData()" value="Find">
+        <input type="text" ng-model="city" placeholder="Filter by City...">
+    </form>
 
     <h2>{{ stateName | uppercase }}</h2>
 
     <section>
-        <div class="" ng-repeat="resort in resortsData track by $index">
-            <h4>Resort Name: {{resort.name}}</h4>
-            <ul ng-repeat="detail in resortsData[$index].activities">
+        <div class="" ng-repeat="resort in resortsData | filter: city track by $index">
+            <h4 ng-click="showDetails = !showDetails"><a href="">{{resort.name}}</a></h4>
+            <ul ng-show="showDetails" ng-repeat="detail in resortsData[$index].activities">
                 <li>City: {{ resort.city }}</li>
                 <li>Description: {{detail.description}}</li>
             </ul>
@@ -20,3 +25,5 @@
     </section>
 
 </div>
+</section>
+<foot-dir></foot-dir>

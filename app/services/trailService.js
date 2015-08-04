@@ -6,7 +6,6 @@ app.service('trailService', function($http, $q) {
             method: 'GET',
             url: 'https://trailapi-trailapi.p.mashape.com/?limit=50&q[activities_activity_type_name_eq]=hiking&q[state_cont]=' + state
         }).then(function(response) {
-            console.log(response);
             dfd.resolve(response.data.places)
         }), function(error) {
             console.log('Error', error);

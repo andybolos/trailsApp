@@ -1,17 +1,25 @@
+
+<header-dir></header-dir>
+<div id="hiking">
+<section id="wrapper">
+
 <div ng-controller="hikingCtrl">
-    <header-dir></header-dir>
 
     <h1>Hiking Trails</h1>
+    <h4>Enter a State</h4>
+    <form ng-submit="getHikeData()" >
+        <input type="text" ng-model="stateName" placeholder="State...">
+        <input type="submit" ng-click="getHikeData()" value="Find">
+        <input type="text" ng-model="city" placeholder="Filter by City...">
+    </form>
 
-    <input type="text" ng-model="stateName" placeholder="State...">
-    <button type="button" ng-click="getHikeData()">FIND</button>
 
     <h2>{{ stateName | uppercase }}</h2>
 
     <section>
-        <div class="" ng-repeat="hike in hikeData track by $index">
-            <h4>{{hike.name}}</h4>
-            <ul ng-repeat="detail in hikeData[$index].activities">
+        <div class="" ng-repeat="hike in hikeData | filter: city track by $index">
+            <h4 ng-click="showDetails = !showDetails"><a href="">{{hike.name}}</a></h4>
+            <ul ng-repeat="detail in hikeData[$index].activities " ng-show="showDetails">
                 <li>City: {{ hike.city }}</li>
                 <li>Description: {{detail.description}}</li>
                 <li>Directions: {{ hike.directions }}</li>
@@ -21,3 +29,6 @@
     </section>
 
 </div>
+</section>
+</div>
+<foot-dir></foot-dir>
