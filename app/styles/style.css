@@ -22,8 +22,11 @@ a {
 
 #wrapper {
     max-width: 1200px;
-    margin: 100px auto;
-    outline: red 1px solid;
+    margin: 200px auto;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px;
+    min-height: 500px;
 }
 
 ul {
@@ -41,7 +44,7 @@ ul {
     width: 100%;
     justify-content: space-between;
     padding: 0 40px;
-    color: #3B85FC;
+    color: #3b5e8e;
     position: absolute;
     top: 0;
     z-index: 1;
@@ -118,4 +121,6 @@ ul {
     width: 100%;
     min-height: 100%;
     position: fixed;
+    overflow: scroll;
+
 }
