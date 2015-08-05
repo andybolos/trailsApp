@@ -4,6 +4,7 @@ app.controller('resortsCtrl', function($scope, resortService) {
         resortService.getResortData($scope.stateName).then(function(response) {
             $scope.resortsData = response;
         });
+
     }
 
 });

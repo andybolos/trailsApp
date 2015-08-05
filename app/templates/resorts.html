@@ -1,29 +1,25 @@
 <header-dir></header-dir>
-<section id="wrapper">
-<div ng-controller="resortsCtrl">
-
-
-    <h1>Ski Resorts</h1>
-    <h4>Enter a State</h4>
-    <form ng-submit="getResortData()" >
-        <input type="text" ng-model="stateName" placeholder="State...">
-        <input type="submit" ng-click="getResortData()" value="Find">
-        <input type="text" ng-model="city" placeholder="Filter by City...">
-    </form>
-
-    <h2>{{ stateName | uppercase }}</h2>
-
-    <section>
-        <div class="" ng-repeat="resort in resortsData | filter: city track by $index">
-            <h4 ng-click="showDetails = !showDetails"><a href="">{{resort.name}}</a></h4>
-            <ul ng-show="showDetails" ng-repeat="detail in resortsData[$index].activities">
-                <li>City: {{ resort.city }}</li>
-                <li>Description: {{detail.description}}</li>
-            </ul>
+<div id="resort">
+    <section id="wrapper">
+        <div ng-controller="resortsCtrl">
+            <section class="content">
+                <h1>Ski Resorts</h1>
+                <!-- <h4>Enter a State</h4> -->
+                <form ng-submit="getResortData()" class="inset">
+                    <input type="text" ng-model="stateName" placeholder="State...">
+                    <input type="submit" value="FIND" class="button">
+                    <input type="text" ng-model="city" placeholder="Filter..." class="filter">
+                </form>
+            </section>
+            <section class="list">
+                <div class="chunk" ng-repeat="resort in resortsData | filter: city track by $index">
+                    <h4 ng-click="showDetails = !showDetails"><a href="">Resort: {{resort.name}} <br />City: {{ resort.city }}</a></h4>
+                    <ul ng-show="showDetails" ng-repeat="detail in resortsData[$index].activities" class="details">
+                        <li><strong>Description: </strong>{{detail.description}}</li>
+                    </ul>
+                </div>
+            </section>
         </div>
-
     </section>
-
 </div>
-</section>
 <foot-dir></foot-dir>

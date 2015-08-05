@@ -22,9 +22,9 @@ a {
 
 #wrapper {
     max-width: 1200px;
-    margin: 200px auto;
+    margin: 100px auto;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 50px;
     min-height: 500px;
 }
@@ -40,7 +40,7 @@ ul {
     display: inline-flex;
     align-items: center;
     flex-flow: row wrap;
-    height: 80px;
+    height: 60px;
     width: 100%;
     justify-content: space-between;
     padding: 0 40px;
@@ -51,8 +51,9 @@ ul {
     background: #fff;
 }
 
-.header nav {
-
+.header img {
+    width: 75px;
+    margin-left: 20px;
 
 }
 
@@ -64,11 +65,17 @@ ul {
 .header nav a {
     padding: 5px 20px;
     display: block;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    color: #3b5e8e;
+    text-transform: uppercase;
+}
+
+.header nav a:visited {
+    color: #3b5e8e;
 }
 
 .header nav a:hover {
-    box-shadow: 0 3px 0 #3B85FC;
+    box-shadow: 0 3px 0 #3b5e8e;
 
 }
 
@@ -82,8 +89,9 @@ ul {
     position: fixed;
     bottom: 0;
     /*outline: red 1px solid;*/
-    padding: 20px;
+    padding: 15px;
     background: #fff;
+    color: #36475e;
     /*letter-spacing: .1em;*/
 }
 
@@ -112,6 +120,97 @@ ul {
     left: 50%;
 }
 
+/**************   Ng-Repeat CSS   ***************/
+
+.content {
+    /*display: inline-flex;*/
+    /*align-items: baseline;*/
+    width: 80%;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+
+}
+
+.inset {
+        display: inline-block;
+        box-sizing: border-box;
+        width: 80%;
+}
+
+.content h1 {
+    padding: 15px;
+    font-size: 3em;
+    color: #383838;
+    width: 100%;
+
+}
+
+.content h4, .content input {
+    font-size: 1em;
+}
+
+.content .inset input {
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.button {
+    color: #fff;
+    size: 2em;
+    /*padding: 10px 35px;*/
+    width: 100px;
+    border-radius: 7px;
+    background-color: #3b5e8e;
+    text-align: center;
+    border: none;
+}
+
+.button:hover {
+    background-color: #000;
+    cursor: pointer;
+}
+
+
+.chunk {
+    /*outline: red 1px solid;*/
+    font-size: 1em;
+    margin: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+
+.chunk a {
+    font-size: 24px;;
+}
+
+.chunk a:visited {
+    color: #3b5e8e;
+}
+
+.details {
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+
+}
+
+.details li {
+    font-size: 20px;
+    display: inline-block;
+    padding: 7px 15px;
+    color: #383838;
+}
+
+.filter {
+    width: 90%;
+    margin: 10px;
+
+}
+
 /**************   Hiking CSS   ***************/
 
 #hiking {
@@ -122,5 +221,26 @@ ul {
     min-height: 100%;
     position: fixed;
     overflow: scroll;
+}
 
+/**************   Hiking CSS   ***************/
+
+#resort {
+    background-image: url("../images/sunset.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    overflow: scroll;
+}
+
+#mtnbike {
+    background-image: url("../images/kauai.gif");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    overflow: scroll;
 }

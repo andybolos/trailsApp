@@ -4,25 +4,26 @@
 <section id="wrapper">
 
 <div ng-controller="hikingCtrl">
+    <section class="content">
+        <h1>Hiking Trails</h1>
+        <!-- <h4>Enter a State</h4> -->
+        <form ng-submit="getHikeData()" class="inset" >
+            <input type="text" ng-model="stateName" placeholder="Enter a State...">
 
-    <h1>Hiking Trails</h1>
-    <h4>Enter a State</h4>
-    <form ng-submit="getHikeData()" >
-        <input type="text" ng-model="stateName" placeholder="State...">
-        <input type="submit" ng-click="getHikeData()" value="Find">
-        <input type="text" ng-model="city" placeholder="Filter by City...">
-    </form>
+            <input type="submit" value="FIND" class="button">
 
+            <!-- <div type="submit" ng-click="getHikeData()" class="button">FIND</div> -->
+            <br />
+            <input type="text" ng-model="city" placeholder="Filter..." class="filter">
+        </form>
+    </section>
 
-    <h2>{{ stateName | uppercase }}</h2>
-
-    <section>
-        <div class="" ng-repeat="hike in hikeData | filter: city track by $index">
-            <h4 ng-click="showDetails = !showDetails"><a href="">{{hike.name}}</a></h4>
-            <ul ng-repeat="detail in hikeData[$index].activities " ng-show="showDetails">
-                <li>City: {{ hike.city }}</li>
-                <li>Description: {{detail.description}}</li>
-                <li>Directions: {{ hike.directions }}</li>
+    <section class="list">
+        <div class="chunk" ng-repeat="hike in hikeData | filter: city track by $index">
+            <h4 ng-click="showDetails = !showDetails"><a href="">Hike: {{hike.name}}<br /> City: {{ hike.city}}</a></h4>
+            <ul ng-repeat="detail in hikeData[$index].activities " ng-show="showDetails" class="details">
+                <li><strong>Description:</strong> {{detail.description}}</li>
+                <li><strong>Directions:</strong> {{ hike.directions }}</li>
             </ul>
         </div>
 
