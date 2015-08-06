@@ -40,20 +40,21 @@ ul {
     display: inline-flex;
     align-items: center;
     flex-flow: row wrap;
-    height: 60px;
+    height: 70px;
     width: 100%;
     justify-content: space-between;
     padding: 0 40px;
     color: #3b5e8e;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 1;
     background: #fff;
 }
 
 .header img {
-    width: 75px;
-    margin-left: 20px;
+    width: 100px;
+    position: fixed;
+    top: -13px;
 
 }
 
@@ -77,6 +78,10 @@ ul {
 .header nav a:hover {
     box-shadow: 0 3px 0 #3b5e8e;
 
+}
+
+.header .small {
+    display: none;
 }
 
 /***********   Footer Directive   ************/
@@ -118,6 +123,13 @@ ul {
     position: absolute;
     top: 50%;
     left: 50%;
+}
+
+.hero {
+    color: #fff;
+    font: 2.5em bolder;
+    text-align: center;
+    margin-top: 80px;
 }
 
 /**************   Ng-Repeat CSS   ***************/
@@ -243,4 +255,43 @@ ul {
     min-height: 100%;
     position: fixed;
     overflow: scroll;
+}
+
+/**************   Breakpoint 1 CSS   ***************/
+
+@media screen and (max-width: 414px) {
+
+    /***********   Header Directive   ************/
+
+    .header {
+        padding: 5px;
+
+    }
+
+    .header img {
+        width: 90px;
+        margin-left: 0;
+        position: absolute;
+        top: -10px;
+    }
+
+    .list {
+        display: none;
+    }
+
+    .small {
+        visibility: visible;
+        display: inline-block;
+    }
+
+
+
+    .home_front {
+        margin: 10px;
+        position: relative;
+    }
+
+
+
+
 }
