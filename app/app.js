@@ -1,7 +1,7 @@
 var app = angular.module('rideApp', ['ngRoute']);
 
-app.config(function($routeProvider, $httpProvider) {
-    $httpProvider.interceptors.push('httpRequestInterceptor');
+app.config(function($routeProvider) {
+    // $httpProvider.interceptors.push('httpRequestInterceptor');, $httpProvider
 
     $routeProvider
     .when('/home', {
