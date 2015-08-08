@@ -1,4 +1,8 @@
 <div class="" ng-controller="weatherCtrl">
-    <input type="text" ng-model="city">
+    <input type="text" ng-model="city" placeholder="City...">
     <button type="button" ng-click="getWeather()">Get Weather</button>
+    <div class="weather" ng-repeat="day in days">
+        {{ day.temp }}
+
+    </div>
 </div>
