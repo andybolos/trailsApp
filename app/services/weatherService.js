@@ -6,7 +6,7 @@ app.service('weatherService', function($http, $q) {
             method: 'GET',
             url: 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + city + '&units=imperial&cnt=3'
         }).then(function(response) {
-            dfd.resolve(response.data)
+            dfd.resolve(response.data.list)
         }), function(error) {
             console.log('Error', error);
         }
